@@ -2,7 +2,7 @@
 " Language:     JavaFX Script
 " Maintainer:   Yang Zhang <com.gmail@yaaang>
 " URL:		http://assorted.sf.net/jfx-vim
-" Last Change:  2007 Jun 03
+" Last Change:  2008 Jan 18
 
 " Quit when a syntax file was already loaded
 if version < 600
@@ -15,12 +15,15 @@ syn case match
 syn sync minlines=50
 
 " most JFX keywords
-syn keyword jfxKeyword after as before bind class else extends first for foreach from if in into last new null on private protected return select switch super then trigger var where while
+syn keyword jfxKeyword abstract attribute bind break class continue delete false for function if import init insert new not null package private public return super sizeof static this throw try true var while after and as before catch dur else exclusive extends finally in bound indexof into inverse lazy on or replace step with where instanceof override at then tween assert by do first from last let protected readonly typeof lazy
 syn keyword jfxImport import nextgroup=scalaFqn skipwhite
 syn match jfxFqn "\<[._$a-zA-Z0-9,*]*" contained nextgroup=jfxFqnSet
 
 " booleans
 syn keyword jfxBoolean true false
+
+" null
+syn keyword jfxNull null
 
 " package and import statements
 syn keyword jfxPackage package nextgroup=jfxFqn skipwhite
@@ -69,6 +72,7 @@ hi link jfxKeyword Keyword
 hi link jfxPackage Include
 hi link jfxImport Include
 hi link jfxBoolean Boolean
+hi link jfxNull Constant
 hi link jfxNumber Number
 hi link jfxString String
 hi link jfxStringEscape Special
